@@ -1,6 +1,9 @@
 
-// You should implement your task here.
-
 module.exports = function towelSort (matrix) {
-  return [];
+  let towel = [];
+  for (key in matrix) {
+    key % 2 === 0 || key === 1 ? towel = towel.concat(matrix[key]) : towel = towel.concat(matrix[key].reverse());
+  }
+  matrix = towel;
+  return matrix;
 }
